@@ -1,15 +1,5 @@
 package com.geek.pf.log.loader;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.util.CollectionUtils;
-
 import com.geek.pf.log.alarm.IAlarm;
 import com.geek.pf.log.alarm.MonitorAlarm;
 import com.geek.pf.log.constant.CfgConstant;
@@ -19,6 +9,15 @@ import com.geek.pf.log.convert.ICustomConverter;
 import com.geek.pf.log.loader.local.LocalLoggerLoader;
 import com.geek.pf.log.validator.DefaultMessageValidator;
 import com.geek.pf.log.validator.IMessageValidator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.util.CollectionUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 /**
  * Log service loader.
@@ -42,7 +41,7 @@ public class LogServiceLoader {
 
         List<ILoggerLoader> vs = loadResource(ILoggerLoader.class, CfgConstant.LOADER_KEY_PREFIX);
 
-        if (vs.size() == 0) {
+        if (vs.isEmpty()) {
 
             vs.add(new LocalLoggerLoader());
         }
@@ -152,7 +151,7 @@ public class LogServiceLoader {
 
     private static void loadConfig() {
 
-        if (props == null || props.size() == 0) {
+        if (props == null || props.isEmpty()) {
 
             InputStream inputStream = LogMessageContainers.class.getResourceAsStream(CfgConstant.LOG_DEFAULT_CFG_PATH);
 

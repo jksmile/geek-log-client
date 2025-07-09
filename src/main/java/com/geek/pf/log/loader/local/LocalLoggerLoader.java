@@ -1,14 +1,13 @@
 package com.geek.pf.log.loader.local;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.util.CollectionUtils;
-
 import com.geek.pf.log.constant.CfgConstant;
 import com.geek.pf.log.loader.ILoggerLoader;
 import com.geek.pf.log.loader.IMessageLoader;
 import com.geek.pf.log.loader.LogServiceLoader;
+import org.springframework.util.CollectionUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Load local log loader.
@@ -32,7 +31,7 @@ public class LocalLoggerLoader implements ILoggerLoader {
             return messageLoaderList;
         }
 
-        messageLoaderList = new ArrayList<IMessageLoader>();
+        messageLoaderList = new ArrayList<>();
 
         String logCfgLocation = LogServiceLoader.props.getProperty(CfgConstant.LOG_FILE_LOCATION);
 

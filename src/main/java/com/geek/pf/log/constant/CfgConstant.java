@@ -9,7 +9,7 @@ package com.geek.pf.log.constant;
 
 public class CfgConstant {
 
-    public static final String LOG_DEFAULT_CFG_PATH = "/META-INF/cfg/dk.logger.cfg";
+    public static final String LOG_DEFAULT_CFG_PATH = "/META-INF/cfg/logger.cfg";
 
     public static final String VALIDATOR_KEY_PREFIX = "log.validator";
 
