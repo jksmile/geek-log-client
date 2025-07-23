@@ -1,18 +1,17 @@
 package com.geek.pf.log.container;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.geek.pf.log.alarm.IAlarm;
 import com.geek.pf.log.constant.CfgConstant;
 import com.geek.pf.log.loader.ILoggerLoader;
 import com.geek.pf.log.loader.IMessageLoader;
 import com.geek.pf.log.loader.LogServiceLoader;
 import com.geek.pf.log.validator.IMessageValidator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Msg container.
@@ -101,7 +100,7 @@ public class LogMessageContainers {
             }
         }
 
-        if (null != alarmList && alarmList.size() > 0) {
+        if (null != alarmList && !alarmList.isEmpty()) {
 
             for (ILoggerLoader loader : loaderList) {
 

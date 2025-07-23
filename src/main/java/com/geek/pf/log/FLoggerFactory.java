@@ -1,12 +1,11 @@
 package com.geek.pf.log;
 
-import java.util.Map;
-import java.util.WeakHashMap;
-
+import ch.qos.logback.classic.LoggerContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ch.qos.logback.classic.LoggerContext;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 /**
  * Log Factory.
@@ -22,7 +21,7 @@ public class FLoggerFactory {
 
         LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
 
-        loggerContext.getFrameworkPackages().add("com.dkgy.pf.log.LoggerHandler");
+        loggerContext.getFrameworkPackages().add("com.geek.pf.log.LoggerHandler");
 
         loggerContext.getFrameworkPackages().add("com.sun.proxy.$Proxy");
     }
